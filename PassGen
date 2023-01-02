@@ -1,0 +1,43 @@
+
+import string
+import random
+pwds_16 = []
+pwds_32 = []
+characters = ""
+
+while characters != "D":
+
+    print("***********************")
+    print("* Welcome to PassGen. *")
+    print("***********************")
+    characters = input("How many characters would you like your password to have?\n"
+                       "(A) - 16 Characters\n"
+                       "(B) - 32 Characters\n"
+                       "(C) - Show me my passwords\n"
+                       "**************************\n"
+                       "Please Make a Selection: ")
+
+    if characters == "A":
+
+        newpass16 = (''.join(random.choices(string.ascii_uppercase + string.ascii_lowercase +
+                             string.digits + string.punctuation, k=16)))
+        print(newpass16)
+        print("******************")
+        save16 = input("Would you like to store this password?\n"
+                       "Yes or No: ")
+        if save16 == "Yes":
+            pwds_32.append(newpass16)
+
+    elif characters == "B":
+
+        newpass32 =(''.join(random.choices(string.ascii_uppercase + string.ascii_lowercase +
+                            string.digits + string.punctuation, k=32)))
+        print(newpass32)
+        print("******************")
+        save32 = input("Would you like to store this password?\n"
+                       "Yes or No: ")
+        if save32 == "Yes":
+            pwds_32.append(newpass32)
+
+    elif characters == "C":
+        print(pwds_16, pwds_32)
